@@ -5,10 +5,5 @@ export const createEventAction = async (data: {
     location: string;
     description?: string | undefined;
 }) => {
-    try {
-        console.log(data)
-
-    } catch (error) {
-
-    }
+    console.log(data)
 }

@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { SheetContent, SheetTrigger, Sheet } from "@/components/ui/sheet";
 import { Menu, Plane } from "lucide-react";
-import { cookies } from "next/headers";
-import Link from "next/link";
 import SignInButton from "../SIgnInButton";
 import { auth } from "@/lib/auth";
 import { SignOutButton } from "../SIgnOutButton";
