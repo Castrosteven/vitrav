@@ -4,6 +4,7 @@ import { Menu, Plane } from "lucide-react";
 import SignInButton from "../SIgnInButton";
 import { auth } from "@/lib/auth";
 import { SignOutButton } from "../SIgnOutButton";
+import Link from "next/link";
 
 async function Header() {
   const session = await auth()
@@ -16,7 +17,7 @@ async function Header() {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Plane className="h-6 w-6 text-primary" />
-          <span className="text-xl font-bold">TravelBuddy</span>
+          <Link href={'/'} className="text-xl font-bold">Vitrav</Link>
         </div>
         <nav className="hidden md:flex space-x-4">
           <Button variant="ghost">Home</Button>
