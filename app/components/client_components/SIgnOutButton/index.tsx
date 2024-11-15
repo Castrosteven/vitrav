@@ -1,11 +1,11 @@
 'use client'
 import { Button } from "@/components/ui/button"
-import { signOut } from "@/lib/auth";
+import { signOut } from "next-auth/react";
 import querystring from 'querystring';
 import { useEffect, useState } from "react";
 
 const generateSignOutUrl = (redirectUri: string) => {
-    const domain = "vitrav.auth.us-east-1.amazoncognito.com"; // Replace with your Cognito domain
+    const domain = "auth.vitrav.com"; // Replace with your Cognito domain
     const clientId = '53kqgchkbunqgfie1f5gs6qmdi'
 
     // Generate unique values for `state` and `nonce` for better security
