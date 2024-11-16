@@ -11,6 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import SearchBar from "./components/client_components/search_bar";
+import { auth } from "@/lib/auth";
 
 const attractions = [
   {
@@ -43,8 +44,10 @@ const attractions = [
   },
 ];
 
-
-function TouristAttractionFinder() {
+async function TouristAttractionFinder() {
+  //  const data = await getAttractions("Paris", "Sightseeing")
+  const session = await auth();
+  console.log(session);
   const categories = ["All", "Sightseeing", "Food", "Entertainment"];
   return (
     <div className="container mx-auto p-4 max-w-4xl">
@@ -60,6 +63,7 @@ function TouristAttractionFinder() {
             className="pl-8"
           />
         </div> */}
+        {/* {data} */}
         <SearchBar />
         <div className="flex gap-2 flex-wrap sm:flex-nowrap">
           {categories.map((category) => (

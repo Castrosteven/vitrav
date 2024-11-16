@@ -20,7 +20,6 @@ async function Header() {
           <Button variant="ghost">Destinations</Button>
           <Button variant="ghost">About</Button>
           <Button variant="ghost">Contact</Button>
-          {/* {session === null ? <SignInButton /> : <Link href={'api/logout'} >Sign Out</Link>} */}
           {session === null ? <SignInButton /> : <SignOutButton/>}
 
       

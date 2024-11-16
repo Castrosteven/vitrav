@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "./components/server_components/Header";
 import Footer from "./components/server_components/Footer";
+import { Analytics } from "@vercel/analytics/react"
 
 
 const geistSans = localFont({

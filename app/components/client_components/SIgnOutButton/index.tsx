@@ -5,8 +5,8 @@ import querystring from 'querystring';
 import { useEffect, useState } from "react";
 
 const generateSignOutUrl = (redirectUri: string) => {
-    const domain = "auth.vitrav.com"; // Replace with your Cognito domain
-    const clientId = '53kqgchkbunqgfie1f5gs6qmdi'
+    const domain = "vitrav.auth.us-east-1.amazoncognito.com"; // Replace with your Cognito domain
+    const clientId = '6j6naesm9t6q8ir0qotjo9atm7'
 
     // Generate unique values for `state` and `nonce` for better security
     const state = Math.random().toString(36).substring(2);  // A simple random state value (could be improved)
@@ -18,7 +18,7 @@ const generateSignOutUrl = (redirectUri: string) => {
         redirect_uri: redirectUri,
         state: state,
         nonce: nonce,
-        scope: "openid profile aws.cognito.signin.user.admin",
+        scope: "openid profile email",
         logout_uri: redirectUri,  // Use the full URL for logout_uri
     };
 
