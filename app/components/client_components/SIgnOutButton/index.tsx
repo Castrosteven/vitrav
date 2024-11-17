@@ -5,8 +5,8 @@ import querystring from 'querystring';
 import { useEffect, useState } from "react";
 
 const generateSignOutUrl = (redirectUri: string) => {
-    const domain = "vitrav.auth.us-east-1.amazoncognito.com"; // Replace with your Cognito domain
-    const clientId = '6j6naesm9t6q8ir0qotjo9atm7'
+    const domain = "vitrav-auth.auth.us-east-1.amazoncognito.com"; // Replace with your Cognito domain
+    const clientId = '69gabjngh58iobqb6k41eapf1v'
 
     // Generate unique values for `state` and `nonce` for better security
     const state = Math.random().toString(36).substring(2);  // A simple random state value (could be improved)

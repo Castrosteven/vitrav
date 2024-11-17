@@ -3,7 +3,7 @@ import Cognito from "next-auth/providers/cognito"
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [Cognito],
   callbacks: {
-    async jwt({ token,account,user,profile,session,trigger }) {
+    async jwt({ token,account }) {
       // console.log("jwt", { token, account, user, profile, session, trigger })
       if (account) {
         token.accessToken = account.access_token
@@ -11,7 +11,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       }
       return token
     },
-    async session({ session, token, user,newSession }) {
+    async session({ session, token }) {
       // console.log("session", { session, token, user,newSession })
       session.id_token=token.id_token  as string
       return session

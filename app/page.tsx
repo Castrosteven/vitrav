@@ -11,7 +11,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import Image from "next/image";
 import SearchBar from "./components/client_components/search_bar";
-import { auth } from "@/lib/auth";
+import { authenticatedClient } from "@/lib/http";
 
 const attractions = [
   {
@@ -45,9 +45,20 @@ const attractions = [
 ];
 
 async function TouristAttractionFinder() {
-  //  const data = await getAttractions("Paris", "Sightseeing")
-  const session = await auth();
-  console.log(session);
+  const instance = await authenticatedClient()
+   if (instance){
+    const {data} = await instance.get('/')
+    console.log(data)
+    // const eventData = {
+    //   name: "Concert in the Park",
+    //   description: "A free concert featuring local bands.",
+    //   address: "123 Park Avenue, Springfield, USA",
+    //   dateTime: "2024-12-01T18:00:00Z"  // ISO 8601 date format
+    // };
+    // const response = await instance.post('/',eventData)
+    // console.log(response)
+   }
+
   const categories = ["All", "Sightseeing", "Food", "Entertainment"];
   return (
     <div className="container mx-auto p-4 max-w-4xl">
